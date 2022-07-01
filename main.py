@@ -22,18 +22,16 @@ if TIME_LIMIT_DAY < 10:
 if TIME_LIMIT_MONTH < 10:
 	TIME_LIMIT_MONTH = f"0{TIME_LIMIT_MONTH}"
 
-if int(now_day) < 10:
-	now_day = f"0{now_day}"
+def pad_with_zero(n):
+	if int(n) < 10:
+		return f"0{n}"
+	else:
+		return n
 
-if int(now_month) < 10:
-	now_month = f"0{now_month}"
-
-if int(yes_month) < 10:
-	yes_month = f"0{yes_month}"
-
-if int(yes_day) < 10:
-	yes_day = f"0{yes_day}"
-
+now_day = pad_with_zero(now_day)
+yes_day = pad_with_zero(yes_day)
+now_month = pad_with_zero(now_month)
+yes_month = pad_with_zero(yes_month)
 #API INFO
 
 client = Client(TW_ACCOUNT_SID, TW_AUTH_TOKEN)
