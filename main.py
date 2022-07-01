@@ -71,7 +71,7 @@ print(selected_articles)
 news_alert = [[news["articles"][article]["title"],news["articles"][article]["url"]] for article in selected_articles]
 
 delta = abs((open-close)/close)
-if delta>0.01:
+if delta>0.05:
 	message = f"{STOCK} growth = {round(delta,4)}!\nHere are the latest news\n"
 	for item in news_alert:
 		message += item[0]
