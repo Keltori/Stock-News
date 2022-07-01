@@ -16,11 +16,6 @@ now_month = NOW.month
 TIME_LIMIT = datetime.datetime.now() - datetime.timedelta(3)
 TIME_LIMIT_DAY =  TIME_LIMIT.day
 TIME_LIMIT_MONTH = TIME_LIMIT.month
-if TIME_LIMIT_DAY < 10:
-	TIME_LIMIT_DAY = f"0{TIME_LIMIT_DAY}"
-
-if TIME_LIMIT_MONTH < 10:
-	TIME_LIMIT_MONTH = f"0{TIME_LIMIT_MONTH}"
 
 def pad_with_zero(n):
 	if int(n) < 10:
@@ -28,6 +23,9 @@ def pad_with_zero(n):
 	else:
 		return n
 
+
+TIME_LIMIT_DAY = pad_with_zero(TIME_LIMIT_DAY)
+TIME_LIMIT_MONTH = pad_with_zero(TIME_LIMIT_MONTH)
 now_day = pad_with_zero(now_day)
 yes_day = pad_with_zero(yes_day)
 now_month = pad_with_zero(now_month)
